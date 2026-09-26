@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 1. HEADER (Τίτλος Εφαρμογής) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#4F46E5"
+                android:textColor="#FFFFFF"
+                android:text="Ν"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginEnd="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ΝΟΥΣ"
+                    android:textColor="#0F172A"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Σύστημα Διαχείρισης Φροντιστηρίου"
+                    android:textColor="#64748B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 2. LIVE METRICS CARDS (Οι κάρτες που έλειπαν και προκαλούσαν το σφάλμα!) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="28dp">
+
+            <!-- Card A: Ταμείο -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:background="#4F46E5"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ΤΑΜΕΙΟ ΣΗΜΕΡΑ"
+                    android:textColor="#E0E7FF"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvTodayCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="145.00 €"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+
+            <!-- Card B: Μαθητές (Συνδέεται live με τη SQLite!) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ΕΝΕΡΓΟΙ ΜΑΘΗΤΕΣ"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvActiveStudents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#0F172A"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 3. ΤΟ ΠΛΕΓΜΑ 2x2 (GRID) ΜΕ ΤΑ ΚΟΥΜΠΙΑ ΣΟΥ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ΓΡΗΓΟΡΕΣ ΕΝΕΡΓΕΙΕΣ"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 1η Σειρά Κουμπιών -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="16dp">
+
+            <!-- Κουμπί Α: Προβολή Σημερινών Πληρωμών -->
+            <Button
+                android:id="@+id/btnTodayPayments"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="📋\n\nΠροβολή\nΣημερινών\nΠληρωμών"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#3B82F6"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"/>
+
+            <!-- Κουμπί Β: Προβολή Μαθητολογίου -->
+            <Button
+                android:id="@+id/btnStudentList"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="👥\n\nΠροβολή\nΜαθητολογίου"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#8B5CF6"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+        <!-- 2η Σειρά Κουμπιών -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Κουμπί Γ: Εγγραφή Μαθητή -->
+            <Button
+                android:id="@+id/btnRegisterStudent"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="➕\n\nΕγγραφή\nΜαθητή"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#10B981"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"/>
+
+            <!-- Κουμπί Δ: Επεξεργασία Μαθητών -->
+            <Button
+                android:id="@+id/btnEditStudents"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="✏️\n\nΕπεξεργασία\nΜαθητών"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#64748B"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

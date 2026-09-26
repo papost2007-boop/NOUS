@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header / Τίτλος -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Εγγραφή Νέου Μαθητή"
+            android:textColor="#0F172A"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Πεδίο: Όνομα -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Όνομα"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Πεδίο: Επίθετο -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Επίθετο"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Πεδίο: Μηνιαία Δίδακτρα -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Μηνιαία Δίδακτρα (€)"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+        <EditText
+            android:id="@+id/etMonthlyFee"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Πεδίο: Τάξη -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τάξη"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- 💡 Αφαιρέσαμε το android:entries για να φορτώνεται με ασφάλεια από τη Java! -->
+        <Spinner
+            android:id="@+id/spinnerGrade"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="16dp"/>
+        <!-- Dropdown Κατεύθυνσης (Εμφανίζεται μόνο στη Γ' Λυκείου) -->
+        <TextView
+            android:id="@+id/tvDirectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Κατεύθυνση (Μόνο για Γ' Λυκείου):"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spDirection"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#1E293B"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+        <!-- Πεδίο: Εποπτικό Υλικό -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Εποπτικό Υλικό"
+            android:textColor="#64748B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Κουμπί Κατάστασης Υλικού (Default: Μη πληρωμένο) -->
+        <Button
+            android:id="@+id/btnToggleMaterial"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="⏳ Μη πληρωμένο (Εκκρεμεί)"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#475569"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Επιλογές Πληρωμής: Εμφανίζονται μόνο αν πατηθεί εξόφληση -->
+        <LinearLayout
+            android:id="@+id/layoutMaterialPayDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/etMaterialAmount"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/editbox_background_normal"
+                android:hint="Ποσό (€)"
+                android:text="20.0"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:textColor="#0F172A"
+                android:layout_marginEnd="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerMaterialMethod"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- Κουμπί: Αποθήκευση -->
+        <Button
+            android:id="@+id/btnSaveStudent"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="💾   Αποθήκευση Μαθητή"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#10B981"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Κουμπί: Ακύρωση -->
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🚪   Ακύρωση"
+            android:textColor="#0F172A"
+            android:backgroundTint="#E2E8F0"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

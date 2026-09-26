@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 🎯 ΤΙΤΛΟΣ -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎯 Επιλογή Κατεύθυνσης"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"/>
+
+        <!-- 🎯 ΥΠΟΤΙΤΛΟΣ -->
+        <TextView
+            android:id="@+id/tvDirectionSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Επιλέξτε κατεύθυνση"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- 📖 ΘΕΩΡΗΤΙΚΗ -->
+        <Button
+            android:id="@+id/btnTheoretical"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="📖  ΘΕΩΡΗΤΙΚΗ (ΑΝΘΡΩΠΙΣΤΙΚΩΝ)"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#8B5CF6"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 🔬 ΘΕΤΙΚΗ -->
+        <Button
+            android:id="@+id/btnPositive"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🔬  ΘΕΤΙΚΗ (ΘΕΤΙΚΩΝ ΕΠΙΣΤΗΜΩΝ)"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#3B82F6"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 🩺 ΥΓΕΙΑΣ -->
+        <Button
+            android:id="@+id/btnHealth"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🩺  ΥΓΕΙΑΣ (ΕΠΙΣΤΗΜΩΝ ΥΓΕΙΑΣ)"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#EC4899"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 💼 ΟΙΚΟΝΟΜΙΚΑ -->
+        <Button
+            android:id="@+id/btnEconomics"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="💼  ΟΙΚΟΝΟΜΙΚΑ (ΟΙΚΟΝΟΜΙΑΣ &amp; ΠΛΗΡ.)"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#F59E0B"
+            android:layout_marginBottom="24dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1E293B"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 👥 ΟΛΟΙ ΟΙ ΜΑΘΗΤΕΣ -->
+        <Button
+            android:id="@+id/btnAllStudents"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="👥  ΟΛΟΙ ΟΙ ΜΑΘΗΤΕΣ"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#10B981"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 🚪 ΕΠΙΣΤΡΟΦΗ -->
+        <Button
+            android:id="@+id/btnBackToGradeSelect"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🚪  ΕΠΙΣΤΡΟΦΗ ΣΤΙΣ ΤΑΞΕΙΣ"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#334155"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1E293B">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚡ Γρήγορη Πληρωμή"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Επιλογή Μαθητή -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Επιλογή Μαθητή"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <!-- Αυτόματο Dropdown Αναζήτησης Μαθητή -->
+        <AutoCompleteTextView
+            android:id="@+id/etQuickSearch"
+            android:layout_width="match_parent"
+            android:popupBackground="#1E293B"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:hint="🔍 Αναζήτηση μαθητή..."
+            android:textColorHint="#64748B"
+            android:textColor="#FFFFFF"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:inputType="text"
+            android:completionThreshold="1"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp" />
+        <!-- 🌟 ΝΕΟ: Η Ετικέτα (Chip) που εμφανίζεται μετά την επιλογή -->
+        <LinearLayout
+            android:id="@+id/layoutStudentSelected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_chip_selected"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:visibility="gone"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/txtSelectedStudentName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text="Όνομα Μαθητή" />
+
+            <ImageButton
+                android:id="@+id/btnClearSelection"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                app:tint="#F87171" /> <!-- Κόκκινο Χ -->
+        </LinearLayout>
+
+        <!-- Μήνας Στόχος -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Μήνας"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/spinnerQuickMonth"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Ποσό -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ποσό (€)"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etQuickAmount"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:inputType="numberDecimal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 📅 Ημερομηνία Καταβολής -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ημερομηνία Καταβολής"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvQuickPayDate"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:gravity="center_vertical"
+            android:text="Επιλέξτε ημερομηνία"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Τρόπος Πληρωμής -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τρόπος Πληρωμής"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/spinnerQuickMethod"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+        <!-- CheckBox Οριστικής εξόφλησης -->
+        <CheckBox
+            android:id="@+id/cbQuickFinalSettlement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="☑️ Οριστική εξόφληση μήνα (μειωμένα δίδακτρα)"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:buttonTint="#10B981"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Σχόλια -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Σχόλια"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etQuickComments"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#334155"
+            android:inputType="textShortMessage"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Κουμπιά -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnQuickSubmit"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Καταχώρηση"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#10B981"
+                android:textStyle="bold"
+                android:layout_marginEnd="6dp"/>
+
+            <Button
+                android:id="@+id/btnQuickCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Ακύρωση"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#475569"
+                android:textStyle="bold"
+                android:layout_marginStart="6dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

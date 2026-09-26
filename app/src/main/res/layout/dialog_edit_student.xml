@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Τίτλος Παραθύρου -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✏️ Επεξεργασία Στοιχείων"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Όνομα -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Όνομα"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/etEditFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Επίθετο -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Επίθετο"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/etEditLastName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Μηνιαία Δίδακτρα -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Μηνιαία Δίδακτρα (€)"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/etEditMonthlyFee"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/editbox_background_normal"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textColor="#0F172A"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Τάξη -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τάξη"
+            android:textColor="#64748B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+        <Spinner
+            android:id="@+id/spinnerEditGrade"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Ετικέτα Κατεύθυνσης -->
+        <TextView
+            android:id="@+id/tvEditDirectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Κατεύθυνση (Μόνο για Γ' Λυκείου)"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"/>
+
+        <!-- Dropdown Κατεύθυνσης -->
+        <Spinner
+            android:id="@+id/spinnerEditDirection"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#E2E8F0"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+
+
+        <!-- Κουμπιά Ενεργειών (Save, Delete, Cancel) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/btnEditSave"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="💾 Σώσε"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#10B981"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnEditDelete"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="#EF4444"
+                android:text="❌ Σβήσε"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnEditCancel"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="🚪 Πίσω"
+                android:textColor="#0F172A"
+                android:backgroundTint="#E2E8F0"
+                android:textStyle="bold"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

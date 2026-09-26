@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0F172A"
+    android:padding="16dp">
+
+    <!-- Τίτλος -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📋 Διαχείριση Οφειλών"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Επιλογέας Μήνα -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1E293B"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Επιλογή Μήνα:"
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerUnpaidMonth"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"/>
+    </LinearLayout>
+
+    <!-- 📊 Συνολικός Αριθμός Οφειλετών (Δυναμικό) -->
+    <TextView
+        android:id="@+id/tvUnpaidCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Σύνολο οφειλετών: 0"
+        android:textColor="#F87171"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Λίστα Οφειλετών -->
+    <ListView
+        android:id="@+id/lvUnpaidStudents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#334155"
+        android:dividerHeight="1dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Κουμπί Επιστροφής -->
+    <Button
+        android:id="@+id/btnUnpaidBack"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="🚪  Επιστροφή"
+        android:backgroundTint="#475569"
+        app:backgroundTint="#475569"
+        app:cornerRadius="16dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+</LinearLayout>

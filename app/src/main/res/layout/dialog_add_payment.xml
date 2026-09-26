@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#1E293B"
+    android:padding="20dp">
+
+    <!-- Τίτλος Παραθύρου -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="💳 Νέα Πληρωμή"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- CheckBox Οριστικής εξόφλησης -->
+    <CheckBox
+        android:id="@+id/cbFinalSettlement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="☑️ Οριστική εξόφληση μήνα (μειωμένα δίδακτρα)"
+        android:textColor="#94A3B8"
+        android:textSize="13sp"
+        android:buttonTint="#10B981"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Ποσό -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ποσό (€)"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etPayAmount"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#334155"
+        android:inputType="numberDecimal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#64748B"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- 📅 ΝΕΟ: Ημερομηνία Καταβολής -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ημερομηνία Καταβολής"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvPayDate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#334155"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:gravity="center_vertical"
+        android:text="Επιλέξτε ημερομηνία"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Τρόπος Πληρωμής -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Τρόπος Πληρωμής"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spinnerPayMethod"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Σχόλια -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Σχόλια (π.χ. Μήνας)"
+        android:textColor="#94A3B8"
+        android:textSize="12sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etPayComments"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#334155"
+        android:inputType="textShortMessage"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#64748B"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Κουμπιά -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnSubmitPayment"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Καταχώρηση"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#10B981"
+            android:textStyle="bold"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnCancelPayment"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Ακύρωση"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#475569"
+            android:textStyle="bold"
+            android:layout_marginStart="6dp"/>
+    </LinearLayout>
+</LinearLayout>

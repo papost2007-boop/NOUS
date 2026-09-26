@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    android:background="@drawable/bg_payment_row"
+    android:gravity="center_vertical">
+
+    <!-- Αριστερό μέρος: Όνομα και Αιτιολογία -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvStudentNameRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Όνομα Μαθητή"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPaymentDetailsRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Μήνας - Τρόπος"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Δεξί μέρος: Ποσό -->
+    <TextView
+        android:id="@+id/tvPaymentAmountRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50.00 €"
+        android:textColor="#10B981"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

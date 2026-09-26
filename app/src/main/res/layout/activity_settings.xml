@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Τίτλος & Υπότιτλος -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙️ Διαχείριση &amp; Ρυθμίσεις"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Γενικές ρυθμίσεις και συντήρηση της εφαρμογής"
+            android:textColor="#94A3B8"
+            android:textSize="13sp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Κάρτα 1: Αντίγραφα Ασφαλείας -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🛡️ Αντίγραφα Ασφαλείας (Backup)"
+                android:textColor="#38BDF8"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Δημιουργήστε ή επαναφέρετε αντίγραφα ασφαλείας της βάσης δεδομένων."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenBackup"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🛡️   ΔΙΑΧΕΙΡΙΣΗ BACKUP"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#0284C7"
+                app:cornerRadius="12dp"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Κάρτα 3: Ασφάλεια & Κωδικός -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒 Ασφάλεια &amp; Κωδικός"
+                android:textColor="#F59E0B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Αλλάξτε τον κωδικό πρόσβασης για την οθόνη των Στατιστικών."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🔑   ΑΛΛΑΓΗ ΚΩΔΙΚΟΥ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D97706"
+                app:cornerRadius="12dp"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Κάρτα 4: ☀️ ΘΕΡΙΝΑ ΜΑΘΗΜΑΤΑ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☀️ Θερινά Μαθήματα"
+                android:textColor="#F59E0B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Επιλογή τάξεων που παρακολουθούν μαθήματα τον Ιούλιο και έχουν υποχρέωση διδάκτρων."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSummerSettings"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="☀️   ΡΥΘΜΙΣΗ ΤΑΞΕΩΝ ΙΟΥΛΙΟΥ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#F59E0B"
+                app:cornerRadius="12dp"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Κάρτα 5: Νέα Σχολική Χρονιά / Προαγωγή -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎓 Νέα Σχολική Χρονιά"
+                android:textColor="#10B981"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Προαγωγή όλων των μαθητών στην επόμενη τάξη. Οι μαθητές της Γ' Λυκείου θα διαγραφούν."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPromoteStudents"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🎓   ΠΡΟΑΓΩΓΗ ΜΑΘΗΤΩΝ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#059669"
+                app:cornerRadius="12dp"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Κάρτα 6: Εκκαθάριση Πληρωμών -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🧹 Εκκαθάριση Πληρωμών"
+                android:textColor="#EF4444"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Διαγραφή όλων των καταγεγραμμένων πληρωμών. Οι μαθητές παραμένουν στη βάση."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClearPayments"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🧹   ΔΙΑΓΡΑΦΗ ΠΛΗΡΩΜΩΝ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#DC2626"
+                app:cornerRadius="12dp"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Κάρτα 7: Εκκαθάριση Σημειώσεων -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📝 Εκκαθάριση Σημειώσεων"
+                android:textColor="#F97316"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Διαγραφή όλων των καταγεγραμμένων σημειώσεων και του ιστορικού επικοινωνίας."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClearAllNotes"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="🗑️   ΕΚΚΑΘΑΡΙΣΗ ΣΗΜΕΙΩΣΕΩΝ"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#EA580C"
+                app:cornerRadius="12dp"
+                android:textStyle="bold"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#334155"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Κουμπί Επιστροφής -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSettingsBack"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🚪   Επιστροφή στο Μενού"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#475569"
+            app:cornerRadius="12dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

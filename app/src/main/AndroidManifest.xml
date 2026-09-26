@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Δικαιώματα Προσπέλασης Interent & Δικτύου -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+        tools:targetApi="31">
+
+        <!-- 🏠 ΑΡΧΙΚΗ ΟΘΟΝΗ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 📋 ΗΜΕΡΗΣΙΟ ΤΑΜΕΙΟ -->
+        <activity
+            android:name=".TodayPaymentsActivity"
+            android:label="Ημερήσιο Ταμείο"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- 🏫 ΕΠΙΛΟΓΗ ΤΑΞΗΣ -->
+        <activity
+            android:name=".GradeSelectionActivity"
+            android:label="Επιλογή Τάξης"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- 👥 ΜΑΘΗΤΟΛΟΓΙΟ (ΛΙΣΤΑ ΜΑΘΗΤΩΝ) -->
+        <activity
+            android:name=".StudentListActivity"
+            android:label="Μαθητολόγιο"
+            android:parentActivityName=".GradeSelectionActivity" />
+
+        <!-- ➕ ΕΓΓΡΑΦΗ ΜΑΘΗΤΗ -->
+        <activity
+            android:name=".RegisterStudentActivity"
+            android:label="Εγγραφή Μαθητή"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- ⚠️ ΟΦΕΙΛΕΤΕΣ ΜΗΝΑ -->
+        <activity
+            android:name=".UnpaidStudentsActivity"
+            android:label="Οφειλέτες Μήνα"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- 📊 ΣΤΑΤΙΣΤΙΚΑ & ΟΙΚΟΝΟΜΙΚΑ -->
+        <activity
+            android:name=".StatisticsActivity"
+            android:label="Στατιστικά"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SelectDirectionActivity"
+            android:label="Επιλογή Κατεύθυνσης"
+            android:parentActivityName=".GradeSelectionActivity" />
+
+        <!-- ⚙️ ΔΙΑΧΕΙΡΙΣΗ & ΡΥΘΜΙΣΕΙΣ -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Ρυθμίσεις"
+            android:parentActivityName=".MainActivity" />
+        <!-- 💾 ΔΙΑΧΕΙΡΙΣΗ BACKUP -->
+        <activity
+            android:name=".BackupActivity"
+            android:label="Διαχείριση Backup"
+            android:parentActivityName=".SettingsActivity" />
+
+        <!-- 📄 FILE PROVIDER (Για κοινοποίηση / εξαγωγή αρχείων Excel & Backup) -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

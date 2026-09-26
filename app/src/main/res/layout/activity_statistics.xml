@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Τίτλος -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📊 Οικονομικά Στατιστικά"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 🎯 ΚΑΡΤΕΣ ΓΕΝΙΚΗΣ ΕΙΚΟΝΑΣ (Ενεργοί Μαθητές & Αναμενόμενα Έσοδα) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <!-- Ενεργοί Μαθητές -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1E293B"
+                android:padding="14dp"
+                android:layout_marginEnd="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👥 ΕΝΕΡΓΟΙ ΜΑΘΗΤΕΣ"
+                    android:textColor="#64748B"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvStatsStudentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#60A5FA"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Αναμενόμενα Έσοδα -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1E293B"
+                android:padding="14dp"
+                android:layout_marginStart="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📈 ΑΝΑΜΕΝΟΜΕΝΑ / ΜΗΝΑ"
+                    android:textColor="#64748B"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvStatsExpectedRevenue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.00 €"
+                    android:textColor="#F59E0B"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 📅 Επιλογέας Μήνα (Spinner) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📅 Επιλογή Μήνα:"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerStatsMonth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
+        <!-- Κάρτα Συνολικών Εισπράξεων Μήνα -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💰 ΣΥΝΟΛΟ ΕΙΣΠΡΑΞΕΩΝ ΜΗΝΑ"
+                android:textColor="#64748B"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvTotalCollected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#34D399"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🏦 ΑΝΑΛΥΣΗ ΑΝΑ ΤΡΟΠΟ ΠΛΗΡΩΜΗΣ"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Μετρητά -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💵 Μετρητά"
+                android:textColor="#34D399"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- POS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💳 POS"
+                android:textColor="#60A5FA"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsPos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- IRIS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📲 IRIS"
+                android:textColor="#F43F5E"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsIris"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Alpha Bank -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🏦 Alpha Bank"
+                android:textColor="#38BDF8"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsAlpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Eurobank -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🏦 Eurobank"
+                android:textColor="#EF4444"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsEurobank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Τράπεζα Πειραιώς -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#1E293B"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🏦 Τράπεζα Πειραιώς"
+                android:textColor="#FBBF24"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvStatsPiraeus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00 €"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- 📊 ΕΝΟΤΗΤΑ: ΕΞΑΓΩΓΗ ΔΕΔΟΜΕΝΩΝ (EXCEL / CSV) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1E293B"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📊 Εξαγωγή Δεδομένων (Excel / CSV)"
+                android:textColor="#38BDF8"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Εξάγετε τα στοιχεία μαθητών και πληρωμών σε αρχείο κατάλληλο για Excel."
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportStudents"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="📄   ΕΞΑΓΩΓΗ ΜΑΘΗΤΟΛΟΓΙΟΥ ΣΕ EXCEL"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#059669"
+                app:cornerRadius="12dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportPayments"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="💰   ΕΞΑΓΩΓΗ ΠΛΗΡΩΜΩΝ ΣΕ EXCEL"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#0284C7"
+                app:cornerRadius="12dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Κουμπί Επιστροφής -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStatsBack"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="⬅️   ΕΠΙΣΤΡΟΦΗ"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#334155"
+            app:cornerRadius="12dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

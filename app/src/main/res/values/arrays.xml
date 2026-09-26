@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Η λίστα με τις τάξεις για το φροντιστήριο με σωστά escaped αποστρόφους (\') -->
+    <string-array name="grades_array">
+        <item>Α\' Γυμνασίου</item>
+        <item>Β\' Γυμνασίου</item>
+        <item>Γ\' Γυμνασίου</item>
+        <item>Α\' Λυκείου</item>
+        <item>Β\' Λυκείου</item>
+        <item>Γ\' Λυκείου</item>
+    </string-array>
+
+    <!-- Η κατάσταση του εποπτικού υλικού με ελληνικούς χαρακτήρες -->
+    <string-array name="material_status_array">
+        <item>Μη πληρωμένο</item>
+        <item>Πληρωμένο</item>
+    </string-array>
+</resources>
